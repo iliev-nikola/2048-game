@@ -58,7 +58,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 29vh;
+  height: 18vh;
   position: absolute;
   top: 5px;
   left: 5px;
@@ -227,7 +227,6 @@ body {
 .footer {
   display: none;
   text-align: center;
-  margin-top: 80px;
   width: 99%;
   color: rgb(83, 81, 81);
 }
@@ -253,7 +252,7 @@ body {
 /* For desktop: */
 @media only screen and (min-width: 870px) {
   .content {
-    margin: 6vh auto;
+    margin: 6vh auto 5vh auto;
   }
 
   #title > span {
@@ -289,8 +288,8 @@ body {
   }
 
   .row > div {
-    width: 7.5vw;
-    height: 13.5vh;
+    width: 7vw;
+    height: 15vh;
   }
 
   .arrow-buttons {
