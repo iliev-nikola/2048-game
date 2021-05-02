@@ -6,7 +6,7 @@
 
 - Languages: Vanilla JS, HTML & CSS
 - Storage: Browser's Local Storage
-- Link to github pages: https://iliev-nikola.github.io/2048-game/
+- Link to github pages: [2048-game](https://iliev-nikola.github.io/2048-game/)
 - Screenshots:
 [![main-view.png](https://i.postimg.cc/L8T5GZ9T/main-view.png)](https://postimg.cc/0zz9wjJM)
 [![in-game.png](https://i.postimg.cc/7ZmPK89t/in-game.png)](https://postimg.cc/Mnf8GLh1)
