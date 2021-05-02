@@ -13,17 +13,26 @@
         <title>2048 - Kolyo's edition</title>
     </head>
     <body>
-        <h1 id="title"><span>2048</span><p>Kolyo's edition&trade;</p></h1>
+        <h1 id="title">
+            <span>2048</span>
+            <p>Kolyo's edition&trade;</p>
+        </h1>
 
         <!-- INFO -->
         <div class="points">
-            <div id="currentBestContainer"><p>CURRENT BEST:</p><p
-                    id="currentBestCounter">0</p></div>
-            <div id="bestContainer"><p>USER'S BEST:</p><p id="bestCounter">0</p></div>
+            <div id="currentBestContainer" class="counter-containers">
+                <p>CURRENT BEST:</p>
+                <p id="currentBestCounter">0</p>
+            </div>
+            <div id="bestContainer" class="counter-containers">
+                <p>USER'S BEST:</p>
+                <p id="bestCounter">0</p>
+            </div>
         </div>
 
-        <div id="pointsContainer"><p>SCORE:</p><p
-                id="pointsCounter"></p>
+        <div id="pointsContainer" class="counter-containers">
+            <p>SCORE:</p>
+            <p id="pointsCounter"></p>
         </div>
         <p id="plus"></p>
 
@@ -34,7 +43,9 @@
 
         <!-- MAIN TABLE -->
         <main class="content">
-            <div class="game-over"><h1 id="gameOver">Game Over &#128557;</h1></div>
+            <div class="game-over">
+                <h1 id="gameOver">Game Over &#128557;</h1>
+            </div>
             <div class="firstRow row">
                 <div></div>
                 <div></div>
