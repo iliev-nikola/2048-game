@@ -1,47 +1,43 @@
 body {
   text-align: center;
-  font-family: cursive;
+  font-family: Chalkboard;
   background-color: rgba(248, 226, 229, 0.671);
 }
 
 /* For mobile phones and tablets */
 .content {
-  display: flex;
-  flex-direction: column;
-  margin: 30px auto;
+  position: relative;
   width: fit-content;
-  width: -moz-max-content;
-  justify-content: space-between;
+  margin: 30px auto;
   box-sizing: border-box;
   border: 5px solid rgb(83, 81, 81);
   border-radius: 5px;
   pointer-events: none;
-  position: relative;
 }
 
 .game-over {
-  pointer-events: none;
   position: absolute;
-  z-index: 1;
   top: -5px;
   left: -5px;
-  font-size: 24px;
-  width: 102.5%;
-  height: 102.5%;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 102.5%;
+  height: 102.5%;
+  pointer-events: none;
+  font-size: 24px;
+  border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.938);
-  transition: all 1s;
+  z-index: 1;
   opacity: 0;
+  transition: all 1s;
 }
 
 #title {
+  margin: 0;
+  text-align: center;
   color: rgb(83, 81, 81);
   pointer-events: none;
-  text-align: center;
-  margin: 0;
 }
 
 #title > span {
@@ -55,14 +51,12 @@ body {
 }
 
 .points {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 18vh;
   position: absolute;
   top: 5px;
   left: 5px;
-  width: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .counter-containers {
@@ -80,16 +74,16 @@ body {
 #pointsCounter,
 #currentBestCounter,
 #bestCounter {
+  padding: 0;
   font-size: 30px;
   font-weight: bold;
-  padding: 0;
 }
 
 #pointsContainer {
   position: absolute;
   top: 5px;
   right: 5px;
-  width: 157px;
+  width: 160px;
 }
 
 #pointsContainer > p:first-child,
@@ -127,26 +121,26 @@ body {
   display: none;
   margin: 0;
   font-size: 14px;
+  font-weight: bold;
   color: rgba(83, 81, 81, 0.637);
   pointer-events: none;
-  font-weight: bold;
 }
 
 #newGame {
   position: absolute;
   right: 5px;
-  top: 96px;
+  top: 86px;
 }
 
 #newGame > button {
-  padding: 5px 21px;
-  font-family: cursive;
+  padding: 5px 22px;
+  font-family: Chalkboard;
   font-weight: bold;
   font-size: 22px;
+  border-radius: 5px;
   background-color: rgb(93, 91, 91);
   color: rgb(236, 163, 28);
   outline: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -160,14 +154,14 @@ body {
 }
 
 .row > div {
-  border: 5px solid rgb(83, 81, 81);
-  box-sizing: border-box;
   position: relative;
-  width: 95px;
-  height: 95px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 95px;
+  height: 95px;
+  box-sizing: border-box;
+  border: 5px solid rgb(83, 81, 81);
   transition: cubic-bezier(0.23, 1, 0.32, 1) 1s;
 }
 
@@ -179,9 +173,9 @@ body {
 }
 
 .arrow-buttons {
-  margin: 0 auto;
   position: relative;
   width: 190px;
+  margin: 0 auto;
 }
 
 .arrow-buttons > div,
@@ -189,9 +183,9 @@ body {
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 60px;
   height: 60px;
-  align-items: center;
   font-weight: bold;
   font-size: 34px;
   background-color: rgb(93, 91, 91);
@@ -232,8 +226,8 @@ body {
 }
 
 .footer > strong {
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
   transition: all 1s;
 }
 
@@ -252,35 +246,33 @@ body {
 /* For desktop: */
 @media only screen and (min-width: 870px) {
   .content {
-    margin: 6vh auto 5vh auto;
+    margin: 50px auto;
   }
 
   #title > span {
-    font-size: 10vh;
+    font-size: 70px;
     font-weight: bold;
   }
 
   #title > p {
-    font-size: 3vh;
+    font-size: 24px;
   }
 
   .points {
-    top: 1vh;
-    left: 4vw;
+    left: 80px;
   }
 
   #pointsContainer {
-    top: 1vh;
-    right: 4vw;
+    right: 80px;
   }
 
   #plus {
-    right: 4.5vw;
+    right: 85px;
   }
 
   #newGame {
-    top: 10.5vh;
-    right: 4vw;
+    top: 70px;
+    right: 80px;
   }
 
   #pressSpace {
@@ -288,8 +280,8 @@ body {
   }
 
   .row > div {
-    width: 7vw;
-    height: 15vh;
+    width: 120px;
+    height: 120px;
   }
 
   .arrow-buttons {
@@ -301,13 +293,13 @@ body {
   }
 }
 
+/* For smaller screens */
 @media only screen and (max-width: 480px) {
-  /* For smaller screens */
   #title {
     display: none;
   }
 
   .content {
-    margin-top: 146px;
+    margin-top: 145px;
   }
 }
