@@ -1,103 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./assets/style/style.css">
-        <link rel="shortcut icon" href="./assets/icons/favicon.png"
-            type="image/x-icon">
-        <link rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-            integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-            crossorigin="anonymous">
-        <title>2048 - Kolyo's edition</title>
-    </head>
-    <body>
-        <h1 id="title">
-            <span>2048</span>
-            <p>Kolyo's edition&trade;</p>
-        </h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style/style.css">
+  <link rel="shortcut icon" href="./assets/icons/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <title>2048 - Kolyo's edition</title>
+</head>
 
-        <!-- INFO -->
-        <div class="points">
-            <div id="currentBestContainer" class="counter-containers">
-                <p>CURRENT BEST:</p>
-                <p id="currentBestCounter">0</p>
-            </div>
-            <div id="bestContainer" class="counter-containers">
-                <p>USER'S BEST:</p>
-                <p id="bestCounter">0</p>
-            </div>
-        </div>
+<body>
+  <h1 id="title">
+    <span>2048</span>
+    <p>Kolyo's edition&trade;</p>
+  </h1>
 
-        <div id="pointsContainer" class="counter-containers">
-            <p>SCORE:</p>
-            <p id="pointsCounter"></p>
-        </div>
-        <p id="plus"></p>
+  <!-- INFO -->
+  <div class="points">
+    <div id="currentBestContainer" class="counter-containers">
+      <p>CURRENT BEST:</p>
+      <p id="currentBestCounter">0</p>
+    </div>
+    <div id="bestContainer" class="counter-containers">
+      <p>USER'S BEST:</p>
+      <p id="bestCounter">0</p>
+    </div>
+  </div>
 
-        <div id="newGame">
-            <button>New Game</button>
-            <p id="pressSpace">press "Space"</p>
-        </div>
+  <div id="pointsContainer" class="counter-containers">
+    <p>SCORE:</p>
+    <p id="pointsCounter"></p>
+  </div>
+  <p id="plus"></p>
 
-        <!-- MAIN TABLE -->
-        <main class="content">
-            <div class="game-over">
-                <h1 id="gameOver">Game Over &#128557;</h1>
-            </div>
-            <div class="firstRow row">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="secondRow row">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="thirdRow row">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div class="fourthRow row">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </main>
+  <div id="newGame">
+    <button>New Game</button>
+    <p id="pressSpace">press "Space"</p>
+  </div>
 
-        <!-- MOBILE BUTTONS -->
-        <div class="arrow-buttons">
-            <div id="up">
-                <i class="fas fa-chevron-up"></i>
-            </div>
-            <div id="right">
-                <i class="fas fa-chevron-right"></i>
-            </div>
-            <div id="down">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div id="left">
-                <i class="fas fa-chevron-left"></i>
-            </div>
-        </div>
+  <!-- MAIN TABLE -->
+  <main class="content">
+    <div class="game-over">
+      <h1 id="gameOver">Game Over &#128557;</h1>
+    </div>
+    <div class="firstRow row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="secondRow row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="thirdRow row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="fourthRow row">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </main>
 
-        <!-- FOOTER -->
-        <footer class="footer">
-            <strong>How To Play?</strong>
-            <p>Use your arrow keys to move the tiles. Tiles with the same number
-                merge into one when they touch. Add them up to reach 2048!</p>
-        </footer>
+  <!-- MOBILE BUTTONS -->
+  <div class="arrow-buttons">
+    <div id="up">
+      <i class="fas fa-chevron-up"></i>
+    </div>
+    <div id="right">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+    <div id="down">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+    <div id="left">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+  </div>
 
-        <!-- JAVASCRIPT -->
-        <script src="./assets/js/utils.js"></script>
-        <script src="./assets/js/constants.js"></script>
-        <script src="./assets/js/index.js"></script>
-    </body>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <strong>How To Play?</strong>
+    <p>Use your arrow keys to move the tiles. Tiles with the same number
+      merge into one when they touch. Add them up to reach 2048!</p>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script src="./assets/js/utils.js"></script>
+  <script src="./assets/js/constants.js"></script>
+  <script src="./assets/js/index.js"></script>
+</body>
+
 </html>

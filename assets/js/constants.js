@@ -8,8 +8,8 @@ const PLUS_SCORE = utils.getById('plus');
 const FOOTER_STRONG = utils.querySelect('.footer > strong');
 const FOOTER_INSTRUCTIONS = utils.querySelect('.footer > p');
 const COLORS = {
-    ' ': 'grey',
-    2: 'antiquewhite',
+    0: 'rgb(128, 128, 128)',
+    2: 'rgb(250, 235, 215)',
     4: 'rgb(208, 211, 49)',
     8: 'rgb(240, 135, 49)',
     16: 'rgb(180, 81, 0)',
@@ -19,5 +19,7 @@ const COLORS = {
     256: 'rgb(5, 103, 168)',
     512: 'rgb(36, 160, 36)',
     1024: 'rgb(1, 110, 52)',
-    2048: 'rgb(124, 67, 13)'
+    2048: 'rgb(124, 67, 13)',
+    'newGameBackground': 'rgb(56, 53, 53)',
+    'newGameBackgroundHover': 'rgb(93, 91, 91)'
 };
