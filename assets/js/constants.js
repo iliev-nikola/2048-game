@@ -23,3 +23,10 @@ const COLORS = {
     'newGameBackground': 'rgb(56, 53, 53)',
     'newGameBackgroundHover': 'rgb(93, 91, 91)'
 };
+const KEYS = {
+    up: 'ArrowUp',
+    down: 'ArrowDown',
+    left: 'ArrowLeft',
+    right: 'ArrowRight',
+    space: ' '
+};
