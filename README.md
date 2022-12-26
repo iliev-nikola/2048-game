@@ -6,6 +6,7 @@
 
 - Languages: Vanilla JS, HTML & CSS
 - Responsive design
+- Mobile devices compatibility (swipe)
 - Storage: Browser's Local Storage
 - Link to github pages: [2048-game](https://iliev-nikola.github.io/2048-game/)
 - Screenshots:
