@@ -3,6 +3,76 @@
   let matrix = [];
   let points = 0;
   let newPoints = 0;
+  let xDown, yDown;
+
+  const randomizer = () => {
+    if (!isContainZero()) {
+      return;
+    }
+
+    while (true) {
+      const row = Math.floor(Math.random() * 4);
+      const col = Math.floor(Math.random() * 4);
+      const chance = Math.random();
+
+      if (matrix[row][col] === '') {
+        matrix[row][col] = chance < 0.9 ? 2 : 4;
+        break;
+      }
+    }
+  };
+
+  const isWinner = () => {
+    for (let row = 0; row < 4; row++) {
+      const isContain2048 = matrix[row].some(x => x === 2048);
+
+      if (isContain2048) {
+        return true;
+      }
+    }
+
+    return false;
+  };
+
+  const isGameOver = () => {
+    for (let row = 0; row < 4; row++) {
+      const isContainZero = matrix[row].some(cell => !cell);
+
+      if (isContainZero) {
+        return false;
+      }
+
+      if (row === 3) {
+        break;
+      }
+
+      for (let col = 0; col < 3; col++) {
+        const current = matrix[row][col];
+
+        if (current === matrix[row][col + 1] || current === matrix[row + 1][col]) {
+          return false;
+        }
+      }
+    }
+
+    for (let col = 0; col < 3; col++) {
+      if (matrix[3][col] === matrix[3][col + 1] || matrix[col][3] === matrix[col + 1][3]) {
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const isContainZero = () => {
+    for (let row = 0; row < 4; row++) {
+      if (matrix[row].some(cell => !cell)) {
+        return true;
+      }
+    }
+
+    return false;
+  };
 
   function createMatrix() {
     points = 0;
@@ -23,7 +93,7 @@
     render();
   }
 
-  function render() {
+  const render = () => {
     if (!isContainZero()) {
       return;
     }
@@ -44,6 +114,7 @@
     randomizer();
 
     const divs = Array.from(document.getElementsByClassName('row'));
+
     for (let row = 0; row < 4; row++) {
       const div = Array.from(divs[row].children);
 
@@ -81,79 +152,10 @@
         localStorage.bestPoints = points;
       }
     }
-  }
-
-  function randomizer() {
-    if (!isContainZero()) {
-      return;
-    }
-
-    while (true) {
-      const row = Math.floor(Math.random() * 4);
-      const col = Math.floor(Math.random() * 4);
-      const chance = Math.random();
-
-      if (matrix[row][col] === '') {
-        matrix[row][col] = chance < 0.9 ? 2 : 4;
-        break;
-      }
-    }
-  }
-
-  function isWinner() {
-    for (let row = 0; row < 4; row++) {
-      const isContain2048 = matrix[row].some(x => x === 2048);
-
-      if (isContain2048) {
-        return true;
-      }
-    }
-
-    return false;
-  }
-
-  function isGameOver() {
-    for (let row = 0; row < 4; row++) {
-      const isContainZero = matrix[row].some(cell => cell === '');
-
-      if (isContainZero) {
-        return false;
-      }
-
-      if (row === 3) {
-        break;
-      }
-
-      for (let col = 0; col < 3; col++) {
-        const current = matrix[row][col];
-
-        if (current === matrix[row][col + 1] || current === matrix[row + 1][col]) {
-          return false;
-        }
-      }
-    }
-
-    for (let col = 0; col < 3; col++) {
-      if (matrix[3][col] === matrix[3][col + 1] || matrix[col][3] === matrix[col + 1][3]) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-
-  function isContainZero() {
-    for (let row = 0; row < 4; row++) {
-      if (matrix[row].some(cell => cell === '')) {
-        return true;
-      }
-    }
-
-    return false;
-  }
+  };
 
   // KEYS
-  function up() {
+  const up = () => {
     let isStuck = true;
 
     for (let col = 0; col < 4; col++) {
@@ -223,9 +225,9 @@
     if (!isStuck) {
       render();
     }
-  }
+  };
 
-  function down() {
+  const down = () => {
     let isStuck = true;
 
     for (let col = 0; col < 4; col++) {
@@ -295,9 +297,9 @@
     if (!isStuck) {
       render();
     }
-  }
+  };
 
-  function left() {
+  const left = () => {
     let isStuck = true;
 
     for (let row = 0; row < 4; row++) {
@@ -367,10 +369,11 @@
     if (!isStuck) {
       render();
     }
-  }
+  };
 
-  function right() {
+  const right = () => {
     let isStuck = true;
+
     for (let row = 0; row < 4; row++) {
       let colIndexZero = 3;
       let colIndexNonZero = 3;
@@ -436,43 +439,82 @@
     if (!isStuck) {
       render();
     }
-  }
+  };
 
-  function onSpaceUp(e) {
+  const onSpaceUp = (e) => {
     if (e.key === ' ') {
       NEW_GAME.style.backgroundColor = COLORS.newGameBackgroundHover;
       NEW_GAME.addEventListener('mouseover', () => {
         NEW_GAME.style.backgroundColor = COLORS.newGameBackground;
       });
+
       NEW_GAME.addEventListener('mouseout', () => {
         NEW_GAME.style.backgroundColor = COLORS.newGameBackgroundHover;
       });
     }
-  }
+  };
 
-  function keysListener(e) {
-    if (e.key === 'ArrowUp') {
+  const keysListener = (e) => {
+    if (e.key === KEYS.up) {
       up();
-    } else if (e.key === 'ArrowRight') {
+    } else if (e.key === KEYS.right) {
       right();
-    } else if (e.key === 'ArrowDown') {
+    } else if (e.key === KEYS.down) {
       down();
-    } else if (e.key === 'ArrowLeft') {
+    } else if (e.key === KEYS.left) {
       left();
-    } else if (e.key === ' ') {
+    } else if (e.key === KEYS.space) {
       createMatrix();
       NEW_GAME.style.backgroundColor = COLORS.newGameBackground;
     }
-  }
+  };
+
+  const handleTouchStart = (event) => {
+    const firstTouch = utils.getTouches(event)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  };
+
+  const handleTouchMove = (event) => {
+    if (!xDown || !yDown || isGameOver()) {
+      return;
+    }
+
+    const xUp = event.touches[0].clientX;
+    const yUp = event.touches[0].clientY;
+
+    const xDiff = xDown - xUp;
+    const yDiff = yDown - yUp;
+
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+      if (xDiff > 0) {
+        /* left swipe */
+        left();
+      } else {
+        /* right swipe */
+        right();
+      }
+    } else {
+      if (yDiff > 0) {
+        /* up swipe */
+        up();
+      } else {
+        /* down swipe */
+        down();
+      }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+  };
 
   // LISTENERS
-  document.addEventListener("DOMContentLoaded", createMatrix);
-  NEW_GAME.addEventListener('click', createMatrix);
+  document.addEventListener('DOMContentLoaded', createMatrix);
+  document.addEventListener('touchstart', handleTouchStart, false);
+  document.addEventListener('touchmove', handleTouchMove, false);
   document.body.addEventListener('keydown', keysListener);
   document.body.addEventListener('keyup', onSpaceUp);
-  document.getElementById('up').addEventListener('click', up);
-  document.getElementById('right').addEventListener('click', right);
-  document.getElementById('down').addEventListener('click', down);
-  document.getElementById('left').addEventListener('click', left);
+  NEW_GAME.addEventListener('click', createMatrix);
   FOOTER_STRONG.addEventListener('click', utils.displayInstructions);
 })();

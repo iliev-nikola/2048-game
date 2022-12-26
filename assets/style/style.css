@@ -172,52 +172,6 @@ body {
   color: rgb(83, 81, 81);
 }
 
-.arrow-buttons {
-  position: relative;
-  width: 190px;
-  margin: 0 auto;
-}
-
-.arrow-buttons > div,
-.arrow-buttons > div:active {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60px;
-  height: 60px;
-  font-weight: bold;
-  font-size: 34px;
-  background-color: rgb(93, 91, 91);
-  color: rgb(236, 163, 28);
-  outline: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.arrow-buttons > div:hover {
-  background-color: rgb(56, 53, 53);
-}
-
-#right {
-  right: 0;
-  top: 40px;
-}
-
-#left {
-  top: 40px;
-}
-
-#up {
-  left: 65px;
-  top: -25px;
-}
-
-#down {
-  left: 65px;
-  top: 105px;
-}
-
 .footer {
   display: none;
   text-align: center;
@@ -284,10 +238,6 @@ body {
     height: 120px;
   }
 
-  .arrow-buttons {
-    display: none;
-  }
-
   .footer {
     display: block;
   }
@@ -295,11 +245,29 @@ body {
 
 /* For smaller screens */
 @media only screen and (max-width: 480px) {
+  body {
+    overflow: hidden;
+    pointer-events: auto;
+  }
+
+  #pointsContainer, .points {
+    top: 20px;
+  }
+
+  #newGame {
+    top: 95px;
+  }
+
   #title {
     display: none;
   }
 
   .content {
-    margin-top: 145px;
+    width: auto;
+    margin-top: 200px;
+  }
+
+  #newGame > button:hover {
+    background-color: rgb(93, 91, 91);
   }
 }
