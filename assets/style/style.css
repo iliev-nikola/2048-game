@@ -267,6 +267,10 @@ body {
     margin-top: 200px;
   }
 
+  .row > div > p {
+    font-size: 30px;
+  }
+
   #newGame > button:hover {
     background-color: rgb(93, 91, 91);
   }
