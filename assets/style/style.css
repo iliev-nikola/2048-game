@@ -134,7 +134,7 @@ body {
 
 #newGame > button {
   padding: 5px 22px;
-  font-family: Chalkboard;
+  font-family: Chalkboard, monospace;
   font-weight: bold;
   font-size: 22px;
   border-radius: 5px;
