@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: Chalkboard;
+  font-family: Chalkboard, monospace;
   background-color: rgba(248, 226, 229, 0.671);
 }
 
